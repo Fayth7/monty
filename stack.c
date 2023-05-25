@@ -8,10 +8,9 @@
  */
 void _stack(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
-	if (*stack == NULL)
-	{
-		printf("Stack is empty\n");
-		return;
-	}
-
-   }
+if (*stack == NULL)
+{
+printf("Stack is empty\n");
+return;
+}
+}

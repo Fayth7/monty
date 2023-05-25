@@ -6,11 +6,7 @@
  * @stack: Double pointer to the stack.
  * @line_number: Line number of the instruction.
  *
- * Description: The mod opcode computes the remainder of the division of the
- * second top element by the top element of the stack. The result is stored in
- * the second top element, and the top element is removed. If the stack contains
- * less than two elements or if the top element is 0, appropriate error messages
- * are printed.
+ * Description: The mod opcode computes the remainder of the division
  */
 void _mod(stack_t **stack, unsigned int line_number)
 {

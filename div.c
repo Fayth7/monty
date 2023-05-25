@@ -5,7 +5,7 @@
  * @stack: Double pointer to the stack.
  * @line_number: Line number of the instruction.
  *
- * Description: divides the second top element of the stack by the top element 
+ * Description: divides the second top element of the stack by the top element
  */
 void _div(stack_t **stack, unsigned int line_number)
 {

@@ -1,5 +1,9 @@
 #include "monty.h"
-
+/**
+ * swap - Swaps the top two elements of the stack.
+ * @stack: Double pointer to the top of the stack.
+ * @line_number: Line number in the Monty bytecode file.
+ */
 void swap(stack_t **stack, unsigned int line_number)
 {
 int temp;
