@@ -5,11 +5,6 @@
 
 #define STACK_SIZE 1024
 
-void pall(stack_t **stack, unsigned int line_number);
-void pint(stack_t **stack, unsigned int line_number);
-void pop(stack_t **stack, unsigned int line_number);
-void swap(stack_t **stack, unsigned int line_number);
-
 int main(int argc, char *argv[])
 {
     char *filename;
@@ -62,7 +57,7 @@ int main(int argc, char *argv[])
     }
         else if (strcmp(opcode, "pall") == 0)
         {
-            pall(&stack, line_number);
+	  pall(&stack);
         }
         else if (strcmp(opcode, "pint") == 0)
         {

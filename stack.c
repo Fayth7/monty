@@ -14,5 +14,5 @@ void _stack(stack_t **stack, unsigned int line_number __attribute__((unused)))
 		return;
 	}
 
-	printf("Top element: %d\n", (*stack)->data);
+	/** printf("Top element: %d\n", (*stack)->data);*/
 }

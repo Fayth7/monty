@@ -25,6 +25,7 @@ extern char **op_toks;
 typedef struct stack_s
 {
         int n;
+  int queue;
   int data;
   int top;
         struct stack_s *prev;
@@ -48,7 +49,7 @@ typedef struct instruction_s
 
 /* PRIMARY INTERPRETER FUNCTIONS */
 void push(stack_t **stack, int value);
-void pall(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
@@ -60,8 +61,8 @@ void _mul(stack_t **stack, unsigned int line_number);
 void _mod(stack_t **stack, unsigned int line_number);
 void _pchar(stack_t **stack, unsigned int line_number);
 void _pstr(stack_t **stack, unsigned int line_number);
-void _rotl(stack_t **stack, unsigned int line_number);
+void rotl(stack_t **stack, unsigned int line_number);
 void _rotr(stack_t **stack, unsigned int line_number);
 void _stack(stack_t **stack, unsigned int line_number);
-
+void queue(stack_t **stack, unsigned int line_number);
 #endif /* _MONTY_H_ */

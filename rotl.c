@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _rotl - Rotates the stack to the top.
+ * rotl - Rotates the stack to the top.
  * @stack: Double pointer to the stack.
  * @line_number: Line number of the instruction.
  *
@@ -9,7 +9,7 @@
  * The top element of the stack becomes the last one, and the second
  * top element becomes the first one.
  */
-void _rotl(stack_t **stack, unsigned int line_number)
+void rotl(stack_t **stack, unsigned int line_number)
 {
 	stack_t *top = *stack;
 	stack_t *second = NULL;
