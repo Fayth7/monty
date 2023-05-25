@@ -10,11 +10,10 @@ int main(int argc, char *argv[])
     char *filename;
     char line[256];
     int line_number = 1;
-    stack_t *stack = NULL;
     char *opcode;
     char *argument;
     FILE *file;
-    int value = 0;
+  
     
     if (argc != 2)
     {
@@ -49,40 +48,20 @@ int main(int argc, char *argv[])
             {
                 printf("L%d: usage: push integer\n", line_number);
                 fclose(file);
-                _stack(&stack, line_number);
                 return (EXIT_FAILURE);
             }
-	    value = atoi(argument);
-    push(&stack, value);
-    }
-        else if (strcmp(opcode, "pall") == 0)
-        {
-	  pall(&stack);
-        }
-        else if (strcmp(opcode, "pint") == 0)
-        {
-            pint(&stack, line_number);
-        }
-        else if (strcmp(opcode, "pop") == 0)
-        {
-            pop(&stack, line_number);
-        }
-        else if (strcmp(opcode, "swap") == 0)
-        {
-            swap(&stack, line_number);
-        }
-        else
+	
+	}
+	    else
         {
             printf("L%d: unknown instruction %s\n", line_number, opcode);
-            _stack(&stack, line_number);
-            fclose(file);
+       fclose(file);
             return (EXIT_FAILURE);
         }
 
         line_number++;
     }
 
-    _stack(&stack, line_number);
-    fclose(file);
+     fclose(file);
     return (EXIT_SUCCESS);
 }
