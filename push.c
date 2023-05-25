@@ -15,5 +15,5 @@ void push(stack_t **stack, int value)
     if (*stack != NULL)
         (*stack)->prev = new_node;
     new_node->prev = NULL;
-    *stack = new_node;
-}
+    *stack = new_
+      }
