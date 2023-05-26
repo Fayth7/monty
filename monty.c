@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 
     if (argc != 2)
     {
-        printf("USAGE: monty file\n");
+        fprintf(stderr, "USAGE: monty file\n");
         return EXIT_FAILURE;
     }
 
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     file = fopen(filename, "r");
     if (file == NULL)
     {
-        printf("Error: Can't open file %s\n", filename);
+        fprintf(stderr, "Error: Can't open file %s\n", filename);
         return EXIT_FAILURE;
     }
 
@@ -45,10 +45,10 @@ int main(int argc, char *argv[])
 
         if (strcmp(opcode, "push") == 0)
         {
-int value;
-	  if (argument == NULL)
+	  int value;
+            if (argument == NULL)
             {
-                printf("L%d: usage: push integer\n", line_number);
+                fprintf(stderr, "L%d: usage: push integer\n", line_number);
                 fclose(file);
                 return EXIT_FAILURE;
             }
@@ -61,7 +61,7 @@ int value;
         }
         else
         {
-            printf("L%d: unknown instruction %s\n", line_number, opcode);
+            fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
             fclose(file);
             return EXIT_FAILURE;
         }
