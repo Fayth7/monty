@@ -1,6 +1,7 @@
 #include <string.h>
 #include "monty.h"
-
+#define QUEUE_MODE 1
+#define STACK_MODE 0
 /**
  * main - Entry point of the program.
  * @argc: Number of command-line arguments.
@@ -16,13 +17,13 @@ int main(int argc, char *argv[])
     char *argument;
     FILE *file;
     stack_t *stack = NULL;
-
+    
     if (argc != 2)
     {
         fprintf(stderr, "USAGE: monty file\n");
         return EXIT_FAILURE;
-    }
 
+    }
     filename = argv[1];
     file = fopen(filename, "r");
     if (file == NULL)
@@ -76,15 +77,53 @@ else if (strcmp(opcode, "add") == 0)
         {
             add(&stack, line_number);
         }
- else
+
+    else if (strcmp(opcode, "sub") == 0)
         {
-            fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
-            fclose(file);
-            return EXIT_FAILURE;
+            sub(&stack, line_number);
         }
+        else if (strcmp(opcode, "mul") == 0)
+        {
+            mul(&stack, line_number);
+        }
+        else if (strcmp(opcode, "div") == 0)
+        {
+            _div(&stack, line_number);
+        }
+        else if (strcmp(opcode, "mod") == 0)
+        {
+	  mod(&stack, line_number);
+	}  
+	   else if (strcmp(opcode, "pchar") == 0)
+        {
+            pchar(&stack, line_number);
+        }
+        else if (strcmp(opcode, "pstr") == 0)
+        {
+            pstr(&stack, line_number);
+        }
+        else if (strcmp(opcode, "rotl") == 0)
+        {
+            rotl(&stack, line_number);
+        }
+        else if (strcmp(opcode, "rotr") == 0)
+        {
+            rotr(&stack, line_number);
+        }
+       
+          else
+	  {
+            fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
+            free_stack(&stack);
+            fclose(file);
+            exit(EXIT_FAILURE);
+        }
+
         line_number++;
     }
 
+   free_stack(&stack);
     fclose(file);
-    return EXIT_SUCCESS;
+   
+    exit(EXIT_SUCCESS);
 }

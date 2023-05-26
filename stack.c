@@ -1,16 +1,11 @@
-#include <stdio.h>
 #include "monty.h"
-
 /**
- * _stack - Prints the top element of the stack.
+ * stack - Sets the format of the data to a stack (LIFO).
  * @stack: Double pointer to the stack.
- * @line_number: Line number of the instruction (unused).
+ * @line_number: Line number of the instruction.
  */
-void _stack(stack_t **stack, unsigned int line_number __attribute__((unused)))
+void _stack(stack_t **stack, unsigned int line_number)
 {
-if (*stack == NULL)
-{
-printf("Stack is empty\n");
-return;
-}
+    (void)stack;
+    (void)line_number;
 }

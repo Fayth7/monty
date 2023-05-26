@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * free_stack - Free the stack.
+ * Free the stack.
  * @stack: Double pointer to the stack.
  */
 void free_stack(stack_t **stack)
