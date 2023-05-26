@@ -1,5 +1,4 @@
 #include "monty.h"
-#include <ctype.h>
 
 int isascii(int c);
 
