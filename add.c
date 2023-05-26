@@ -8,14 +8,12 @@
 
 void add(stack_t **stack, unsigned int line_number)
 {
-stack_t *temp;
 if (*stack == NULL || (*stack)->next == NULL)
 {
-printf("L%d: can't add, stack too short\n", line_number);
+fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 exit(EXIT_FAILURE);
 }
-temp = *stack;
-(*stack)->next->data += (*stack)->data;
-*stack = (*stack)->next;
-free(temp);
+
+(*stack)->next->n += (*stack)->n;
+pop(stack, line_number);
 }

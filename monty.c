@@ -55,11 +55,28 @@ int main(int argc, char *argv[])
             value = atoi(argument);
             push(&stack, value);
         }
+        else if (strcmp(opcode, "pint") == 0)
+        {
+            pint(&stack, line_number);
+        }
+
         else if (strcmp(opcode, "pall") == 0)
         {
             pall(&stack);
         }
-        else
+	else if (strcmp(opcode, "pop") == 0)
+        {
+            pop(&stack, line_number);
+        }
+else if (strcmp(opcode, "swap") == 0)
+        {
+            swap(&stack, line_number);
+        }
+else if (strcmp(opcode, "add") == 0)
+        {
+            add(&stack, line_number);
+        }
+ else
         {
             fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
             fclose(file);
