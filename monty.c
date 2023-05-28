@@ -35,6 +35,11 @@ return (EXIT_FAILURE);
 while (fgets(line, sizeof(line), file))
 {
 line[strcspn(line, "\n")] = '\0';
+if (line[0] == '#')
+{
+line_number++;
+continue;
+}
 opcode = strtok(line, " ");
 if (opcode == NULL)
 {
