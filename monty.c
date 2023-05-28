@@ -61,7 +61,7 @@ return (EXIT_FAILURE);
 value = atoi(argument);
 push(&stack, value);
 }
-if (strcmp(opcode, "push") == 0)
+else if (strcmp(opcode, "push") == 0)
 {
 push(&stack, line_number);
 }
