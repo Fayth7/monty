@@ -35,7 +35,7 @@ return (EXIT_FAILURE);
 while (fgets(line, sizeof(line), file))
 {
 line[strcspn(line, "\n")] = '\0';
-if (line[0] == '#')
+if (line[0] == '#' || line[0] == '\0')
 {
 line_number++;
 continue;
@@ -105,7 +105,7 @@ else if (strcmp(opcode, "mod") == 0)
 {
 mod(&stack, line_number);
 }
-else if (strcmp(opcode, "comments") == 0)
+else if (line[0] != '\0')
 {
 comments(&stack, line_number);
 }
